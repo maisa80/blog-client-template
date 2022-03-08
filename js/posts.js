@@ -12,8 +12,10 @@ async function fetchAllPosts() {
         for (let post of posts) {
             html += `
                 <li class="list-group-item">
-                    <p>${post.title} <br> <span class="date">- ${post.date}</span> </p>
-                    <p><span class="date">- ${post.author}</span></p>
+                    <p>${post.title} <br> </p>
+                    <p><span class="date">- ${post.date}</span> <br></p>
+                    <p>${post.content}<br></p>
+                    <p><span class="autor">Author: ${post.author}</span></p>
                    
                 </li>
             `
