@@ -11,7 +11,7 @@ body {
     margin: 20px auto;
     padding: 50px;
 }
-
+button{margin: 5px;}
 input,
 textarea,
 select {
@@ -33,12 +33,12 @@ form a {
 
 a {
     text-decoration: none;
-    color: darkblue;
+    color: #fff;
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: rgba(42, 42, 187, 0.692);
+    text-decoration: none;
 }
 
 #main-nav {

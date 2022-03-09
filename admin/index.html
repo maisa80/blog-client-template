@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESTful Blog API Admin</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -20,11 +21,21 @@
             <a href="create-post.html">Create new post</a>
         </nav>
 
-        <table >
-            <tr id="post-list">
-  
-            </tr>
-          </table>
+        <table id="table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Titel</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                    <th>Content</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+
+        </table>
 
     </div>
     <script src="js/manage-posts.js"></script>
