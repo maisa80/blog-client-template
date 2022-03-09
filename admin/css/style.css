@@ -2,9 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: lightsteelblue;
-}
 
 #container {
 
@@ -33,13 +30,13 @@ form a {
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: #333;
     text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
     text-decoration: none;
-}
+} */
 
 #main-nav {
     width: 100%;

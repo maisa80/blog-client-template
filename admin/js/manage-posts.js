@@ -21,8 +21,8 @@ async function fetchAllPosts() {
                         ${post.content}
                     </ul>
                 </td>
-                <td><button class="btn btn-dark"><a href="update-post.html?id=${post._id}">Update</a></button>
-                <button class="btn btn-dark"><a href="#" class="delete-post-link" data-post-id="${post._id}">Delete</a></button></td>
+                <td><button class="btn btn-outline-dark"><a href="update-post.html?id=${post._id}">Update</a></button>
+                <button class="btn btn-outline-dark"><a href="#" class="delete-post-link" data-post-id="${post._id}">Delete</a></button></td>
             </tr>
         `;
         }
