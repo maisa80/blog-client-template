@@ -8,8 +8,9 @@ body {
 
 
 #container {
-    width: 600px;
+
     margin: 20px auto;
+    padding: 50px;
 }
 input,
 textarea,
