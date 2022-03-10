@@ -13,7 +13,7 @@ async function fetchAllPosts() {
             html += `
                 <li class="list-group-item">
                     <p>${post.title} <br> </p>
-                    <p><span class="date">- ${post.date}</span> <br></p>
+                    <p><span class="date"> ${post.date.slice(0,10)}</span> <br></p>
                     <p>${post.content}<br></p>
                     <p><span class="autor">Author: ${post.author}</span></p>
                    
