@@ -20,6 +20,7 @@ async function fetchAllPosts() {
 
 async function submitUpdates(postId) {
   let updateForm = document.getElementById("form-update-post");
-  updateForm.addEventListener("submit", async function () {    
+  updateForm.addEventListener("submit", async function () {
+     e.preventDefault();    
   });
 }
