@@ -29,5 +29,17 @@ async function submitUpdates(postId) {
       author: formData.get("author"),
       content: formData.get("content"),
     };
+    try {
+      await fetch(`http://localhost:5000/posts/${postId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(formObject),
+      });
+      window.location.replace("./index.html");
+    } catch (error) {
+      throw new Error(error);
+    }
   });
 }
