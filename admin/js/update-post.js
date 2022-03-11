@@ -19,8 +19,15 @@ async function fetchAllPosts() {
 }
 
 async function submitUpdates(postId) {
-  let updateForm = document.getElementById("form-update-post");
+  const updateForm = document.getElementById("form-update-post");
   updateForm.addEventListener("submit", async function (e) {
-     e.preventDefault();    
+    e.preventDefault();
+    const formData = new FormData(this);
+    console.log(formData.get("content"));
+    const formObject = {
+      title: formData.get("title"),
+      author: formData.get("author"),
+      content: formData.get("content"),
+    };
   });
 }
