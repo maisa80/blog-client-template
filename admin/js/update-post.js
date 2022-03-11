@@ -37,7 +37,8 @@ async function submitUpdates(postId) {
           "Content-type": "application/json",
         },
         body: JSON.stringify(formObject),
-      });      
+      });   
+      window.location.replace("./index.html");   
     } catch (error) {
       throw new Error(error);
     }
