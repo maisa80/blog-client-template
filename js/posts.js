@@ -11,11 +11,11 @@ async function fetchAllPosts() {
         let html = ''
         for (let post of posts) {
             html += `
-                <li class="list-group-item">
-                    <p>${post.title} <br> </p>
-                    <p><span class="date"> ${post.date.slice(0,10)}</span> <br></p>
+                <li class="list-group-item list-group-item-dark">
+                    <h2>${post.title} <br> </h2>
+                    <p>By: <span class="author">${post.author}</span> | Posted on: <span class="date"> ${post.date.slice(0,10)}</span> <br></p>
                     <p>${post.content}<br></p>
-                    <p><span class="autor">Author: ${post.author}</span></p>
+                    <p></p>
                    
                 </li>
             `

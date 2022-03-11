@@ -9,6 +9,9 @@
     margin: 20px auto;
     padding: 50px;
 }
+h1{
+    margin-left: 40px;
+}
 input,
 textarea,
 select {
@@ -44,30 +47,9 @@ a:hover {
     flex-direction: row-reverse;
 }
 
-#post-list li {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #999;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-}
 
-#post-list li p {
-    width: 450px;
-}
-
-#post-list li:first-child {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-#post-list {
-    padding: 0;
-}
-
-.date {
+.date, .author {
     font-style: italic;
     font-weight: 600;
-    color: #aaa;
+   
 }
