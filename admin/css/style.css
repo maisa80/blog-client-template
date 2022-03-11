@@ -72,3 +72,13 @@ a:hover {
     font-weight: 600;
     color: #aaa;
 }
+
+/* UPDATE POST  */
+
+#update-container { 
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 20px;
+  width: 50%;
+  margin-left: 25%;
+}
