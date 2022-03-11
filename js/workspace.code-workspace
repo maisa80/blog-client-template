@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\blog-api"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "blog-client-template"
+	}
+}

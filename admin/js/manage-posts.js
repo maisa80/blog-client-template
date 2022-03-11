@@ -15,7 +15,7 @@ async function fetchAllPosts() {
             <tr>
                 <td>${post.title}</td>
                 <td>${post.author}</td>
-                <td>${post.date}</td>
+                <td>${post.date.slice(0,10)}</td>
                 <td>
                     <ul>
                         ${post.content}
