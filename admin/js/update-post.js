@@ -16,6 +16,7 @@ async function fetchAllPosts() {
   } catch (error) {
     throw new Error(error);
   }
+  submitUpdates(postId);
 }
 
 async function submitUpdates(postId) {
@@ -29,5 +30,16 @@ async function submitUpdates(postId) {
       author: formData.get("author"),
       content: formData.get("content"),
     };
+    try {
+      await fetch(`http://localhost:5000/posts/${postId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(formObject),
+      });      
+    } catch (error) {
+      throw new Error(error);
+    }
   });
 }
