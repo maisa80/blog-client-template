@@ -15,10 +15,18 @@
         </h3>
     </header>
 
-<div id="update-container">
-    
+    <div id="update-container">
+        <form id="form-update-post">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required />
 
-</div>
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required />
+
+            <label for="content">Content</label>
+            <textarea id="content" name="content" style="height: 100px" required></textarea>
+        </form>
+    </div>
 
     <script src="js/update-post.js"></script>
 </body>
