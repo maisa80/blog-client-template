@@ -1,2 +1,3 @@
-window.onload = function () {  
+window.onload = function () {
+  console.log(window.location.search);    
 };
