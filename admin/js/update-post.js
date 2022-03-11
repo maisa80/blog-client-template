@@ -6,5 +6,7 @@ window.onload = function () {
 
   fetchAllPosts(urlParams);
 
+  let postId = urlParams.get("id");
+
   
 };
