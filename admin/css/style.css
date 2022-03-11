@@ -82,3 +82,11 @@ a:hover {
   width: 50%;
   margin-left: 25%;
 }
+
+header h3 {
+  color: rgb(47, 47, 47);
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  padding-top: 1rem;
+}
