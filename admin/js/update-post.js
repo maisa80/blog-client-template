@@ -55,3 +55,15 @@ async function submitUpdates(postId) {
     }
   });
 }
+
+function preselectTags() {
+  let options = document.querySelectorAll("option");
+  let selectedTagsArray = [];
+
+  for (let option of options) {
+    if (option.selected) {
+      selectedTagsArray.push(option.value);
+    }
+  }
+  return selectedTagsArray;
+}
