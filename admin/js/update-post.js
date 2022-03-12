@@ -8,11 +8,22 @@ async function fetchAllPosts() {
 
   try {
     const response = await fetch(`http://localhost:5000/posts/${postId}`);
+    if (!response.ok) {
+      throw new Error("Some problems with connecting to API");
+    }
+
     const data = await response.json();
 
     document.getElementById("title").value = data.title;
     document.getElementById("author").value = data.author;
     document.getElementById("content").value = data.content;
+
+    for (let tag of data.tags) {
+      let option = document.getElementById(tag);
+      option.setAttribute("selected", true);
+      console.log(option);
+      console.log(tag);
+    }
   } catch (error) {
     throw new Error(error);
   }
@@ -37,8 +48,8 @@ async function submitUpdates(postId) {
           "Content-type": "application/json",
         },
         body: JSON.stringify(formObject),
-      });   
-      window.location.replace("./index.html");   
+      });
+      window.location.replace("./index.html");
     } catch (error) {
       throw new Error(error);
     }
