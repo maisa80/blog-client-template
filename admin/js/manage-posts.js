@@ -1,6 +1,7 @@
-window.onload = function() {
+window.onload = function () {
     fetchAllPosts();
 }
+
 const tableBody = document.querySelector('#table tbody');
 async function fetchAllPosts() {
     try {
@@ -10,37 +11,52 @@ async function fetchAllPosts() {
 
         let html = ''
         for (let post of posts) {
-            
-            tableBody.innerHTML += `
+            if (post.title !== null && post.author !== null && post.content !== null && post.tags !== null) {
+                html += `
             <tr>
                 <td>${post.title}</td>
                 <td>${post.author}</td>
-                <td>${post.date.slice(0,10)}</td>
-                <td>
-                    <ul>
-                        ${post.content}
-                    </ul>
-                </td>
+                <td>${post.date.slice(0, 10)}</td>
+                <td>${showhundredChar(post.content)}</td>
+                <td>${post.tags.join(", ")}</td>
                 <td><button class="btn btn-outline-dark"><a href="update-post.html?id=${post._id}">Update</a></button>
                 <button class="btn btn-outline-dark"><a href="#" class="delete-post-link" data-post-id="${post._id}">Delete</a></button></td>
             </tr>
         `;
+            }
+
         }
 
-        document.getElementById('post-list').innerHTML = html;
-    } catch(error) {
+        tableBody.innerHTML = html;
+
+    } catch (error) {
         console.log(error)
     }
+
+
+    const deletePostLinks = document.getElementsByClassName('delete-post-link');
+
+    for (let link of deletePostLinks) {
+        link.addEventListener('click', async function (e) {
+            e.preventDefault();
+
+            const postId = e.target.dataset.postId;
+
+            try {
+                await fetch(`http://localhost:5000/posts/${postId}`, {
+                    method: 'DELETE',
+                })
+
+                e.target.parentNode.parentNode.parentNode.remove(); // remove from the DOM, without reloading the page
+            } catch (error) {
+                console.log(error)
+            }
+        })
+    }
 }
-// html += `
-//                 <td class="list-group-item">
-//                     <p>${post.title} <br> </p>
-//                     <p><span class="date">- ${post.date}</span> <br></p>
-//                     <p>${post.content}<br></p>
-//                     <p><span class="autor">Author: ${post.author}</span></p>
-//                     <div>
-//                         <a href="update-post.html?id=${post._id}">Update</a> |
-//                         <a href="#" class="delete-post-link" data-post-id="${post._id}">Delete</a> 
-//                     </div>
-//                 </td>
-//             `
+function showhundredChar(post) {
+    if (post.length > 100)
+        return `${post.substring(0, 100)}<a href="post.html">Read more...</a>`;
+    else return post;
+
+}
