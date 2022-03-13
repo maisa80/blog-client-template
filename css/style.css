@@ -36,6 +36,32 @@
     box-sizing: border-box;
 }
 
+header {
+  background-color: var(--bs-gray);
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+}
+
+header a {  
+  color: var(--bs-white);
+  font-family: var(--bs-font-sans-serif);
+  font-size: 1.3rem;
+  padding: 0.7rem;
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--bs-gray);
+  cursor: pointer;
+  margin-right: 60px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+header a:hover {
+  background-color: var(--bs-gray);
+  text-decoration: none;
+}
+
 .left-indent {
     margin-left: 20px;
 }
@@ -69,12 +95,12 @@ form a {
 
 a {
     text-decoration: none;
-    color: darkblue;
+    color: var(--bs-gray-dark);
 }
 
 a:hover {
     text-decoration: underline;
-    color: rgba(42, 42, 187, 0.692);
+    color: var(--bs-gray-dark);
 }
 
 #main-nav {
