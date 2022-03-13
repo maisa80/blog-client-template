@@ -36,6 +36,11 @@
     box-sizing: border-box;
 }
 
+body {
+  font: 1rem/1.5 var(--bs-font-sans-serif);
+  background-color: var(--bs-light);
+}
+
 header {
   background-color: var(--bs-gray);
   display: flex;
@@ -71,9 +76,11 @@ header a:hover {
     margin: 20px auto;
     padding: 50px;
 }
-h1{
+
+h1 {
     margin-left: 40px;
 }
+
 input,
 textarea,
 select {
@@ -93,25 +100,30 @@ form a {
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: var(--bs-gray-dark);
-}
-
-a:hover {
-    text-decoration: underline;
-    color: var(--bs-gray-dark);
-}
-
 #main-nav {
     width: 100%;
     display: flex;
     flex-direction: row-reverse;
 }
 
+#main-nav a {
+  text-decoration: none;
+  color: var(--bs-light);
+  font-family: sans-serif;
+  cursor: pointer;
+  margin-left: 650px;
+  font-size: 1.2rem;
+  background-color: var(--bs-gray-dark);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#main-nav a:hover {
+  background-color: var(--bs-primary);
+  cursor: pointer;
+}
 
 .date, .author, .tags {
     font-style: italic;
-    font-weight: 600;
-   
+    font-weight: 600;   
 }
