@@ -2,28 +2,26 @@ window.onload = function () {
   fetchAllPosts();
 };
 
+let selectedTagsArray = [];
+
 async function fetchAllPosts() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const postId = urlParams.get("id");
+  let urlParams = new URLSearchParams(window.location.search); // retrieving the querystring
+  let postId = urlParams.get("id"); //urlParams.get('id')
 
   try {
-    const response = await fetch(`http://localhost:5000/posts/${postId}`);
+    let response = await fetch(`http://localhost:5000/posts/${postId}`);
     if (!response.ok) {
       throw new Error("Some problems with connecting to API");
     }
 
-    const data = await response.json();
+    let data = await response.json();
 
     document.getElementById("title").value = data.title;
     document.getElementById("author").value = data.author;
     document.getElementById("content").value = data.content;
 
-    for (let tag of data.tags) {
-      let option = document.getElementById(tag);
-      option.setAttribute("selected", true);
-      console.log(option);
-      console.log(tag);
-    }
+    preselectTags(data);
+    newFormSelectBehavior();
   } catch (error) {
     throw new Error(error);
   }
@@ -31,12 +29,12 @@ async function fetchAllPosts() {
 }
 
 async function submitUpdates(postId) {
-  const updateForm = document.getElementById("form-update-post");
+  let updateForm = document.getElementById("form-update-post");
   updateForm.addEventListener("submit", async function (e) {
     e.preventDefault();
-    const formData = new FormData(this);
+    let formData = new FormData(this);
     console.log(formData.get("content"));
-    const formObject = {
+    let formObject = {
       title: formData.get("title"),
       author: formData.get("author"),
       content: formData.get("content"),
@@ -56,14 +54,34 @@ async function submitUpdates(postId) {
   });
 }
 
-function preselectTags() {
-  let options = document.querySelectorAll("option");
-  let selectedTagsArray = [];
-
-  for (let option of options) {
-    if (option.selected) {
-      selectedTagsArray.push(option.value);
+async function preselectTags(data) {
+  let htmlTags = document.getElementById("tags");
+  for (let i = 0; i < htmlTags.options.length; i++) {
+    for (let tag of data.tags) {
+      if (htmlTags.options[i].value === tag) {
+        htmlTags.options[i].selected = true;
+        selectedTagsArray.push(htmlTags.options[i].index);
+      }
     }
   }
-  return selectedTagsArray;
+}
+
+async function newFormSelectBehavior() {
+  let tagsSelectElement = document.getElementById("tags");
+
+  for (let option of tagsSelectElement.children) {
+    option.addEventListener("click", function () {
+      if (selectedTagsArray.includes(this.index)) {
+        this.selected = false;
+        selectedTagsArray = selectedTagsArray.filter((value) => {
+          return value !== this.index;
+        });
+      } else {
+        selectedTagsArray.push(option.index);
+      }
+      for (let index of selectedTagsArray) {
+        tagsSelectElement.options[index].selected = true;
+      }
+    });
+  }
 }
