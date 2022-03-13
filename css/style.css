@@ -1,3 +1,7 @@
+:root {
+    --bs-blue: #0d6efd;
+    --bs-orange: #fd7e14;
+}
 * {
     box-sizing: border-box;
 }
@@ -6,14 +10,29 @@
     margin-left: 20px;
 }
 
+nav a, .read-more {
+    color: var(--bs-orange);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover, .read-more:hover {
+    color: var(--bs-blue);
+    text-decoration: none;
+}
+ul{
+    margin-top: 20px;
+}
 #container {
 
     margin: 20px auto;
     padding: 50px;
 }
-h1{
+
+h1 {
     margin-left: 40px;
 }
+
 input,
 textarea,
 select {
@@ -53,5 +72,5 @@ a:hover {
 .date, .author, .tags {
     font-style: italic;
     font-weight: 600;
-   
+
 }

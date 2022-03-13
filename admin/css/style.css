@@ -25,11 +25,9 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0)
-  );
+  --bs-gradient: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(255, 255, 255, 0));
 }
 
 body {
@@ -47,7 +45,7 @@ body {
 }
 
 button {
-  margin: 5px;
+  margin: 2px;
 }
 
 input[type="text"],
@@ -67,14 +65,41 @@ form a {
   text-align: center;
 }
 
+nav a, .read-more {
+  color: var(--bs-orange);
+  text-decoration: none;
+}
+
+nav a:hover, .read-more:hover {
+  color: var(--bs-blue);
+  text-decoration: none;
+}
+
 .btn a {
-  color: var(--bs-info);
+  color: var(--bs-light);
   text-decoration: none;
 }
 
 .btn a:hover {
-  color: var(--bs-light);
+  color: var(--bs-blue);
   text-decoration: none;
+}
+
+.manageBtn {
+  background-color: var(--bs-info);
+  color: var(--bs-light);
+  border-radius: 2px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.manageBtn:hover {
+  background-color: var(--bs-orange);
+  cursor: pointer;
+}
+
+.table-responsive {
+  margin-top: 50px;
 }
 
 /* NAV ADMIN  */
@@ -87,7 +112,7 @@ form a {
 
 .back-to-blog {
   color: var(--bs-light);
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: var(--bs-info);
   border-radius: 5px;
   font-family: var(--bs-font-sans-serif);

@@ -13,7 +13,7 @@ async function fetchAllPosts() {
         for (let post of posts) {
             if (post.title !== null && post.author !== null && post.content !== null && post.tags !== null) {
                 html += `
-                <li class="list-group-item list-group-item-dark">
+                <li class="list-group-item list-group-item-info"">
                     <h2>${post.title} <br> </h2>
                     <p><span class="author">By: </span><b>${post.author}</b> | <span class="date">Posted on: </span> <b>${post.date.slice(0, 10)}</b> <br></p>
                     <p>${showhundredChar(post.content, post._id)}<br></p>
@@ -47,7 +47,7 @@ async function fetchAllPosts() {
     }
     function showhundredChar(post, id) {
         if (post.length > 100)
-            return `${post.substring(0, 100)}...<a href="post.html?id=${id}">Read more</a>`;
+            return `${post.substring(0, 100)}...<a href="post.html?id=${id}" class="read-more">Read more</a>`;
         else return post;
 
     }

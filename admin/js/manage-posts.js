@@ -17,10 +17,10 @@ async function fetchAllPosts() {
                 <td>${post.title}</td>
                 <td>${post.author}</td>
                 <td>${post.date.slice(0, 10)}</td>
-                <td>${showhundredChar(post.content)}</td>
+                <td>${showhundredChar(post.content, post._id)}</td>
                 <td>${post.tags.join(", ")}</td>
-                <td><button class="btn btn-outline-dark"><a href="update-post.html?id=${post._id}">Update</a></button>
-                <button class="btn btn-outline-dark"><a href="#" class="delete-post-link" data-post-id="${post._id}">Delete</a></button></td>
+                <td><button class="btn manageBtn"><a href="update-post.html?id=${post._id}">Update</a></button>
+                <button class="btn manageBtn"><a href="#" class="delete-post-link" data-post-id="${post._id}">Delete</a></button></td>
             </tr>
         `;
             }
@@ -54,9 +54,9 @@ async function fetchAllPosts() {
         })
     }
 }
-function showhundredChar(post) {
+function showhundredChar(post, id) {
     if (post.length > 100)
-        return `${post.substring(0, 100)}<a href="post.html">Read more...</a>`;
+        return `${post.substring(0, 100)}...<a href="../post.html?id=${id}" class="read-more"> Read more</a>`;
     else return post;
 
 }
