@@ -9,7 +9,7 @@ async function fetchAllPosts() {
         console.log(posts);
 
         let html = ''
-        
+
         for (let post of posts) {
             if (post.title !== null && post.author !== null && post.content !== null && post.tags !== null) {
                 html += `
@@ -21,23 +21,8 @@ async function fetchAllPosts() {
                    
                 </li>
             `
-           
-           
-                // let arr = post.tags;
-                // console.log(arr.join(", ")),
-                //     console.log(arr.length);
-                // let tagString = ''
-                // for (let i = 0; i < arr.length; i++) {
-                //     tagString += arr;
-                //     console.log(tagString)
-                // }
-               
-                
+
             }
-
-           
-
-
 
         }
 
