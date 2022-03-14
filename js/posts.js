@@ -13,7 +13,7 @@ async function fetchAllPosts() {
         for (let post of posts) {
             if (post.title !== null && post.author !== null && post.content !== null && post.tags !== null) {
                 html += `
-                <li class="list-group-item list-group-item-info"">
+                <li class="list-group-item table-striped">
                     <h2>${post.title} <br> </h2>
                     <p><span class="author">By: </span><b>${post.author}</b> | <span class="date">Posted on: </span> <b>${post.date.slice(0, 10)}</b> <br></p>
                     <p>${showhundredChar(post.content, post._id)}<br></p>
