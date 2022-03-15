@@ -114,7 +114,7 @@ async function fetchTagsFromAllPosts() {
 
     }
 
-    tableBody.innerHTML = html;
+
   } catch (error) {
     console.log(error);
   }
