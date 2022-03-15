@@ -160,12 +160,13 @@ nav a:hover, .read-more:hover {
 
 /* UPDATE POST  */
 
-.update-container {
+.update-container, .new-container {
   border-radius: 5px;
   background-color: var(--bs-gray);
   padding: 20px;
   width: 50%;
   margin-left: 25%;
+  margin-top: 20px;
 }
 
 header h3 {
@@ -190,9 +191,10 @@ header h3 {
   cursor: pointer;
 }
 
-#form-update-post a {
+#form-update-post a, #create-post-form a {
   color: var(--bs-white);
   text-decoration: none;
+  
 }
 
 label {
