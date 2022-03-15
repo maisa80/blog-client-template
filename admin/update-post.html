@@ -12,24 +12,45 @@
 </head>
 
 <body>
+    <div id="container">
+        <header>
+            <h3>
+                Update Post
+            </h3>
+        </header>
 
-    <header>
-        <h3>
-            Update Post
-        </h3>
-    </header>
+        <div class="update-container">
+            <form id="form-update-post">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required />
 
-    <div class="update-container">
-        <form id="form-update-post">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" required />
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" required />
 
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author" required />
+                <label for="content">Content</label>
+                <textarea id="content" name="content" style="height: 150px" required></textarea>
 
-            <label for="content">Content</label>
-            <textarea id="content" name="content" style="height: 150px" required></textarea>
+                <label for="tags">Tags</label>
+                <select name="tags" id="tags" size="5" multiple required>
+                    <option value="cars">Cars</option>
+                    <option value="sport">Sport</option>
+                    <option value="karate">Karate</option>
+                    <option value="food">Food</option>
+                    <option value="social">Social</option>
+                </select>
 
+<<<<<<< HEAD
+                <button type="submit" class="submitBtn" id="update-post-btn">Update</button><br />
+                <a href="index.html"><i class="fas fa-arrow-left"></i> back</a>
+            </form>
+        </div>
+
+        <script src="js/update-post.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+=======
             <label for="tags">Tags</label>
             <select name="tags" id="tags" size="3" multiple required>                                
                 <option value= "cars">Cars</option>                
@@ -40,12 +61,8 @@
             <button type="submit" class="update-post-btn submitBtn" id="update-post-btn">Update</button><br />
             <a href="index.html"><i class="fas fa-arrow-left"></i> back</a>
         </form>
+>>>>>>> d0883234cc3b8e025d78afaf96ad3cd0924d7eb5
     </div>
-
-    <script src="js/update-post.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>
