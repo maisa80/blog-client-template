@@ -56,16 +56,14 @@ async function submitUpdates(postId) {
 }
 
 async function preselectTags(data) {
-  let htmlTags = document.getElementById("tags");
-  for (let i = 0; i < htmlTags.options.length; i++) {
-    for (let tag of data.tags) {
-      if (htmlTags.options[i].value === tag) {
-        htmlTags.options[i].selected = true;
-        selectedTagsArray.push(htmlTags.options[i].index);
-      }
-    }
-  }
+  fetchTagsFromAllPosts();
+  // if (htmlTags.options[i].value === tag) {
+  //   htmlTags.options[i].selected = true;
+  //   selectedTagsArray.push(htmlTags.options[i].index);
+  // }
+
 }
+// }
 
 async function newFormSelectBehavior() {
   let tagsSelectElement = document.getElementById("tags");
@@ -85,4 +83,43 @@ async function newFormSelectBehavior() {
       }
     });
   }
+}
+async function fetchTagsFromAllPosts() {
+  try {
+    const response = await fetch("http://localhost:5000/posts");
+    const posts = await response.json();
+    console.log(posts);
+
+    let html = "";
+    for (let post of posts) {
+      if (
+        post.title !== null &&
+        post.author !== null &&
+        post.content !== null &&
+        post.tags !== null
+      ) {
+        if (post.tags !== null) {
+          console.log(post.tags.length)
+          let htmlTags = document.getElementById("tags");
+          for (let p of post.tags) {
+
+
+            htmlTags.innerHTML += `<option>${p}</option>`
+            console.log(p)
+          }
+
+        }
+
+      }
+
+    }
+
+    tableBody.innerHTML = html;
+  } catch (error) {
+    console.log(error);
+  }
+
+
+
+
 }
