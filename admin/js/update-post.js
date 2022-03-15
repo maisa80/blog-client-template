@@ -38,6 +38,7 @@ async function submitUpdates(postId) {
       title: formData.get("title"),
       author: formData.get("author"),
       content: formData.get("content"),
+      tags: formData.getAll("tags", "value")
     };
     try {
       await fetch(`http://localhost:5000/posts/${postId}`, {
