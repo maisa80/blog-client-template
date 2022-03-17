@@ -11,7 +11,7 @@ async function createPost(e) {
         title: formData.get('title'),
         author: formData.get('author'),
         content: formData.get('content'),
-        tags: formData.get('tags')
+         tags: formData.getAll("tags", "value")
     };
 
     console.log(JSON.stringify(JSONString));
