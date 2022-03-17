@@ -69,6 +69,6 @@ function showhundredChar(post, id) {
     return `${post.substring(
       0,
       100
-    )}...<a href="../post.html?id=${id}" class="read-more"> Read more</a>`;
+    )}...<a href="../post.html?id=${id}" class="read-more"> Read more <i class='fas fa-angle-double-right'></i></a>`;
   else return post;
 }
