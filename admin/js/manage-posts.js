@@ -66,9 +66,6 @@ async function fetchAllPosts() {
 }
 function showhundredChar(post, id) {
   if (post.length > 100)
-    return `${post.substring(
-      0,
-      100
-    )}...<a href="../post.html?id=${id}" class="read-more"> Read more <i class='fas fa-angle-double-right'></i></a>`;
+    return `${post.substring(0,100)}...<a href="../post.html?id=${id}" class="read-more"> Read more <i class='fas fa-angle-double-right'></i></a>`;
   else return post;
 }
