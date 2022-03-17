@@ -27,8 +27,10 @@ async function fetchAllPosts() {
                 <td><a href="./update-post.html?id=${post._id}">
                         <button type="button" class="update-post-btn submitBtn"> Update <i class="fas fa-pencil-alt"></i> </button>
                     </a>
-                <a href="#" class="delete-post-link" data-post-id="${post._id
-            }"> <button class="update-post-btn submitBtn">Delete <i class="fas fa-trash-alt"></i></button></a></td>
+                <a href="#" class="delete-post-link" data-post-id="${post._id}">
+                      <button class="update-post-btn submitBtn">Delete <i class="fas fa-trash-alt"></i></button>
+                    </a>
+                </td>
             </tr>
         `;
 
