@@ -3,6 +3,7 @@ window.onload = function () {
 };
 
 const tableBody = document.querySelector("#table tbody");
+var today = '';
 async function fetchAllPosts() {
   try {
     const response = await fetch("http://localhost:5000/posts");
@@ -17,16 +18,17 @@ async function fetchAllPosts() {
         post.content !== null &&
         post.tags !== null
       ) {
+
         html += `
             <tr>
                 <td>${post.title}</td>
                 <td>${post.author}</td>
-                <td>${post.date.slice(0, 10)}</td>
-                <td>${showhundredChar(post.content, post._id)}</td>
-                <td>${post.tags.join(", ")}</td>
+                <td><i>Tags: ${post.tags.join(", ")}</i></td>
+                <td>${post.date.slice(0, 16).replace("T", " ")}</td>
                 <td><a href="./update-post.html?id=${post._id}">
                         <button type="button" class="update-post-btn submitBtn"> Update <i class="fas fa-pencil-alt"></i> </button>
-                    </a>
+                    </a> 
+
                 <a href="#" class="delete-post-link" data-post-id="${post._id}">
                       <button class="update-post-btn submitBtn">Delete <i class="fas fa-trash-alt"></i></button>
                     </a>
@@ -39,11 +41,13 @@ async function fetchAllPosts() {
 
     }
 
+
     tableBody.innerHTML = html;
   } catch (error) {
     console.log(error);
   }
 
+  // Delete post
   const deletePostLinks = document.getElementsByClassName("delete-post-link");
 
   for (let link of deletePostLinks) {
@@ -63,9 +67,17 @@ async function fetchAllPosts() {
       }
     });
   }
+  function getDate(date) {
+
+
+    // d.parse(dateString)
+    // console.log(d.hours()); // Hours
+    // console.log(d.getUTCMinutes());
+    // console.log(d.getUTCSeconds());
+    // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    // return date;
+
+  }
 }
-function showhundredChar(post, id) {
-  if (post.length > 100)
-            return `${post.substring(0, 100)}...<a href="post.html?id=${id}" class="read-more">Read more <i class='fas fa-angle-double-right'></i></a>`;
-        else return post;
-}
+
+

@@ -14,24 +14,37 @@
 <body>
     <div id="container">
         <nav id="main-nav">
+            <!-- En länk som navigerar till blogg sidan (index.html) -->
             <a class="back-to-blog" href="../index.html"> <i class="fas fa-arrow-left"></i> Back to blog</a>
-
         </nav>
+
         <h1>Posts</h1>
-        <nav id="main-nav">
 
-            <a href="create-post.html">Create new post</a>
+        <!-- länk som navigerar till admin/create-post.html -->
+        <nav id="main-nav">
+            <a href="create-post.html"><b>Create new post</b></a>
         </nav>
+
+        <!-- En lista på alla inlägg i tabell-form <table> -->
+            <!-- Tabellen skall ha följande kolumner
+                - Titel: Visar alla titlar för inläggen
+                - Författare: Visar författarnas namn
+                - Datum: Visar när inläggen skapades
+                - Hantera: Innehåller 2 knappar:
+                ● Knapp/länk redigera befintligt inlägg. Navigerar till
+                admin/update-post.html
+                ● Knapp/länk raderar befintligt inlägg 
+                - Visa inlägg med tags 
+            -->
         <div class="table-responsive">
-            <table id="table" class="table table-light">
-                <thead class="thead-dark">
+            <table id="table" class="table table-striped">
+                <thead>
                     <tr>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Date</th>
-                        <th>Content</th>
                         <th>Tags</th>
-                        <th>Manage</th>
+                        <th>Date</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
