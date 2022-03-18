@@ -3,7 +3,7 @@ window.onload = function () {
 };
 
 const tableBody = document.querySelector("#table tbody");
-var today = '';
+
 async function fetchAllPosts() {
   try {
     const response = await fetch("http://localhost:5000/posts");
@@ -30,7 +30,7 @@ async function fetchAllPosts() {
                     </a> 
 
                 <a href="#" class="delete-post-link" data-post-id="${post._id}">
-                      <button class="update-post-btn submitBtn">Delete <i class="fas fa-trash-alt"></i></button>
+                      <button class="update-post-btn submitBtn" data-post-id="${post._id}">Delete <i class="fas fa-trash-alt"></i></button>
                     </a>
                 </td>
             </tr>
@@ -49,35 +49,24 @@ async function fetchAllPosts() {
 
   // Delete post
   const deletePostLinks = document.getElementsByClassName("delete-post-link");
-
   for (let link of deletePostLinks) {
-    link.addEventListener("click", async function (e) {
+    link.addEventListener('click', async function (e) {
       e.preventDefault();
 
       const postId = e.target.dataset.postId;
 
       try {
         await fetch(`http://localhost:5000/posts/${postId}`, {
-          method: "DELETE",
-        });
+          method: 'DELETE', // GET/POST/PATCH/DELETE
+        })
 
         e.target.parentNode.parentNode.parentNode.remove(); // remove from the DOM, without reloading the page
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
-    });
+    })
   }
-  function getDate(date) {
 
-
-    // d.parse(dateString)
-    // console.log(d.hours()); // Hours
-    // console.log(d.getUTCMinutes());
-    // console.log(d.getUTCSeconds());
-    // var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    // return date;
-
-  }
 }
 
 
