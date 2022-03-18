@@ -18,7 +18,7 @@ async function fetchPost() {
             html += `
                 <div class="list-group-item list-group-item-dark">
                     <h2>${post.title} <br> </h2>
-                    <p><span class="author">By: </span><b>${post.author}</b> | <span class="date">Posted on: </span> <b>${post.date.slice(0, 10)}</b> </p>
+                    <p><span class="author">By: </span><b>${post.author}</b> | <span class="date">Posted on: </span> <b>${post.date.slice(0, 16).replace("T", " ")}</b> </p>
                     <p><span class="tags">Tags:</span> ${post.tags.join(", ")}</p>
                     <p>${post.content}<br></p>
                    
