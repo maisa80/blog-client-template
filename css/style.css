@@ -94,7 +94,10 @@ ul {
 h1 {
   margin-left: 40px;
 }
-
+.list-group-item {
+ 
+  margin-bottom: 20px;
+}
 input,
 textarea,
 select {
